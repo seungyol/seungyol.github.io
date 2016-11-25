@@ -1,44 +1,36 @@
 /**
- * Main App Controller for the Angular Material Starter App
- * @param UsersDataService
+ * Main App Controller for the UQ Library
  * @param $mdSidenav
  * @constructor
  */
-function AppController(UsersDataService, $mdSidenav) {
-  var self = this;
+function AppController($mdSidenav,$location, $rootScope) {
+    let self = this;
 
-  self.selected     = null;
-  self.users        = [ ];
-  self.selectUser   = selectUser;
-  self.toggleList   = toggleUsersList;
+    self.selected     = null;
+    self.libraries    = [ ];
+    
+    
+    $rootScope.$on("CallSelectLibrary", function(event, data){
+        self.selectLibrary(data);
+    });
 
-  // Load all registered users
+    self.selectLibrary   =  ( library ) => {
+        self.selected = angular.isNumber(library) ? $scope.libraries[library] : library;
+        $('md-list .md-button').removeClass('selected');
+        var selSpan = $(".md-button span").filter(function() { return ($(this).text().indexOf(self.selected.name) > -1) });
+        selSpan.closest('button').addClass('selected');
+        $location.path('/library-detail/'+self.selected.lid ).replace();
+    };
+    self.toggleList   = (ev) => {
+        if(ev && ev.target && ev.target.name ==="search"){
+            return;
+        }
+        $mdSidenav('left').toggle();
+    };
 
-  UsersDataService
-        .loadAllUsers()
-        .then( function( users ) {
-          self.users    = [].concat(users);
-          self.selected = users[0];
-        });
-
-  // *********************************
-  // Internal methods
-  // *********************************
-
-  /**
-   * Hide or Show the 'left' sideNav area
-   */
-  function toggleUsersList() {
-    $mdSidenav('left').toggle();
-  }
-
-  /**
-   * Select the current avatars
-   * @param menuId
-   */
-  function selectUser ( user ) {
-    self.selected = angular.isNumber(user) ? $scope.users[user] : user;
-  }
+    // Load all libraries and availability data
+    self.libraries    = $.parseJSON(sessionStorage.getItem("libraryData"));
+    self.availability = $.parseJSON(sessionStorage.getItem("availability"));
 }
 
-export default [ 'UsersDataService', '$mdSidenav', AppController ];
+export default [ '$mdSidenav','$location','$rootScope', AppController ];

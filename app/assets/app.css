@@ -36,7 +36,9 @@ md-list .md-button {
 md-list .md-button.selected {
   color: #03a9f4;
 }
-
+md-sidenav {
+    overflow-x: hidden;
+}
 md-sidenav md-list {
   padding: 0px 0px 8px 0px;
 }
@@ -106,28 +108,63 @@ md-toolbar h1 {
   font-weight: 400;
 }
 
-.avatar {
-  position: relative;
-  width: 128px;
-  height: 128px;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  display: inline-block;
-  overflow: hidden;
-  margin: 0px;
-  vertical-align: middle;
-  zoom: 0.70;
-  transform: translateZ(0);
-  -webkit-transform: scale(0.70);
-  -moz-transform: scale(0.70);
-}
-
-md-bottom-sheet md-icon {
-  margin-right: 20px;
-}
-
 span.name {
   font-weight: bold;
   font-size: 1.1em;
   padding-left: 5px;
+}
+
+library-list input {
+    width: 100%;
+    text-transform: uppercase;
+    padding: 5px;
+}
+library-details div {
+    padding: 5px;
+}
+
+.demo-md-panel {
+  min-height: 500px;
+}
+
+.demo-dialog-example {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+      0 13px 19px 2px rgba(0, 0, 0, 0.14),
+      0 5px 24px 4px rgba(0, 0, 0, 0.12);
+  width: 500px;
+}
+
+.demo-dialog-content {
+  padding: 0 15px;
+  width: 100%;
+}
+
+.demo-dialog-content md-content {
+  overflow: hidden;
+}
+
+.demo-dialog-button {
+  width: 100%;
+}
+.md-select-menu-container.md-active.md-clickable {
+    z-index: 999;
+}
+
+.success-msg {
+/*    position: fixed;*/
+    background-color: rgb(16,108,200);
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    opacity: 1;
+}
+
+.md-primary-bottom-right {
+    position: absolute;
+    bottom : 20px;
+    right: 20px;
 }
