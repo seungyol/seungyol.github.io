@@ -34,5 +34,8 @@ This system contains the applcation for UQ Front end developer test.
 
 * on any issues you have come across
     * No key between library data and computer availability data. Therefore, I used the front part of the library name.
-    * 
-on which AWS services would you use for deployment of your application or how would you deploy this application on premise
+    * Computer availability API returns object array rather than json. So, I can't use $http service for JSONP request. I fixed this issue by using jQuery ajax call.
+* on which AWS services would you use for deployment of your application or how would you deploy this application on premise
+    * No experience with AWS
+    * For deploying it on premise, dependency libraries can be bundled and minified for reducind the No of request calls and the size of downloaded data.
+    * For Continuous Integration, Genkins can be used.
