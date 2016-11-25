@@ -7,7 +7,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
   <title>Angular Material - Starter App</title>
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
   <link rel="stylesheet" href="./assets/angular-material.min.css"/>
   <link rel="stylesheet" href="./assets/app.css"/>
 </head>
@@ -40,8 +40,11 @@
     <div ng-view></div>
   </div>
 
+<!--
   <script src="system.js" type="text/javascript"></script>
   <script src="config.js" type="text/javascript"></script>
+-->
+    <script type='text/javascript' src='build.js'></script>
   <script type="text/javascript">
     System.import('src/boot/boot')
         .catch( console.error.bind(console) ); // make sure any errors print to console
