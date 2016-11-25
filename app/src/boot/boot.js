@@ -24,7 +24,7 @@ function fetchData() {
 //            console.log('Error: ' + data);
 //        });                  
     return $.ajax({
-        url: "HTTPS://app.library.uq.edu.au/api/v2/library_hours",
+        url: "https://app.library.uq.edu.au/api/v2/library_hours",
         dataType: "jsonp",
         sonpCallback: "jsonpCallback"
     }).done((result) => {
@@ -34,7 +34,7 @@ function fetchData() {
 
 function fetchAvailability() {
     return $.ajax({
-          url: "HTTPS://app.library.uq.edu.au/api/computer_availability",
+          url: "https://app.library.uq.edu.au/api/computer_availability",
           dataType: "jsonp",
           jsonpCallback: "jsonpCallback"
     }).done((result) => {
