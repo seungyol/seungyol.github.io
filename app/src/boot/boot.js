@@ -16,20 +16,20 @@ var initInjector = angular.injector(["ng"]);
 var $http = initInjector.get("$http");
 
 function fetchData() {
-//    return $http.jsonp('//app.library.uq.edu.au/api/v2/library_hours?callback=JSON_CALLBACK')
-//        .success(function(data) {
-//            sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
-//        }).error(function(data) {
-//            alert(data);
-//            console.log('Error: ' + data);
-//        });                  
-    return $.ajax({
-        url: "https://app.library.uq.edu.au/api/v2/library_hours",
-        dataType: "jsonp",
-        jsonpCallback: "jsonpCallback"
-    }).done((result) => {
-        sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
-    });
+    return $http.jsonp('https://app.library.uq.edu.au/api/v2/library_hours?callback=JSON_CALLBACK')
+        .success(function(data) {
+            sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
+        }).error(function(data) {
+            alert(data);
+            console.log('Error: ' + data);
+        });                  
+//    return $.ajax({
+//        url: "https://app.library.uq.edu.au/api/v2/library_hours",
+//        dataType: "jsonp",
+//        jsonpCallback: "jsonpCallback"
+//    }).done((result) => {
+//        sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
+//    });
 }
 
 function fetchAvailability() {

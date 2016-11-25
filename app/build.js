@@ -78296,12 +78296,11 @@ $__System.register("1", ["3", "15", "17", "18"], function($__export) {
       initInjector,
       $http;
   function fetchData() {
-    return $.ajax({
-      url: "https://app.library.uq.edu.au/api/v2/library_hours",
-      dataType: "jsonp",
-      jsonpCallback: "jsonpCallback"
-    }).done(function(result) {
+    return $http.jsonp('https://app.library.uq.edu.au/api/v2/library_hours?callback=JSON_CALLBACK').success(function(data) {
       sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
+    }).error(function(data) {
+      alert(data);
+      console.log('Error: ' + data);
     });
   }
   function fetchAvailability() {
