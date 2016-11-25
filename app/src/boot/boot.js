@@ -22,14 +22,7 @@ function fetchData() {
         }).error(function(data) {
             alert(data);
             console.log('Error: ' + data);
-        });                  
-//    return $.ajax({
-//        url: "https://app.library.uq.edu.au/api/v2/library_hours",
-//        dataType: "jsonp",
-//        jsonpCallback: "jsonpCallback"
-//    }).done((result) => {
-//        sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
-//    });
+        });
 }
 
 function fetchAvailability() {
