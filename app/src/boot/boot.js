@@ -26,7 +26,7 @@ function fetchData() {
     return $.ajax({
         url: "https://app.library.uq.edu.au/api/v2/library_hours",
         dataType: "jsonp",
-        sonpCallback: "jsonpCallback"
+        jsonpCallback: "jsonpCallback"
     }).done((result) => {
         sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
     });

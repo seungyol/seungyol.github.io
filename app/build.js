@@ -78299,7 +78299,7 @@ $__System.register("1", ["3", "15", "17", "18"], function($__export) {
     return $.ajax({
       url: "https://app.library.uq.edu.au/api/v2/library_hours",
       dataType: "jsonp",
-      sonpCallback: "jsonpCallback"
+      jsonpCallback: "jsonpCallback"
     }).done(function(result) {
       sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
     });
