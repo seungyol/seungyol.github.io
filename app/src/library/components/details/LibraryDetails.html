@@ -1,0 +1,18 @@
+<div>
+
+<h2>{{$ctrl.selected.name}}</h2>
+<div>Open time : {{$ctrl.selected.departments[0].open}}</div>
+<div>Close time : {{$ctrl.selected.departments[0].close}}</div>
+<h3>Computer Availability</h3>
+<ul>
+    <li ng-repeat="availableLevel in $ctrl.availableLevels">
+    {{availableLevel}} : Available ({{$ctrl.selectedAvailabilty.availability[availableLevel].Available}})
+        Occupied ({{$ctrl.selectedAvailabilty.availability[availableLevel].Occupied}})
+    </li>
+</ul>
+<div ng-hide="$ctrl.availableLevels">No Available Computers</div>
+</div>
+
+<md-button md-theme="red" class="md-raised md-accent md-button md-primary-bottom-right" ng-click="$ctrl.add($event)" aria-label="Add">
+    New Library
+</md-button>

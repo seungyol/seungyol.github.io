@@ -1,0 +1,65 @@
+<div role="dialog" aria-label="New Library" layout="column" layout-align="center center">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>New Library</h2>
+    </div>
+  </md-toolbar>
+
+    <div class="demo-dialog-content">
+        <md-content >
+            <div>
+                <form name="libraryForm" ng-submit="ctrl.save(libraryForm)">
+                    <div layout-gt-xs="column">
+                        <md-input-container class="md-block" >
+                            <label>Library ID </label>
+                            <input type='number' ng-model="library.lid" name="lid" required >
+                            <div ng-messages="libraryForm.lid.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>                              
+                        </md-input-container>
+                        <md-input-container md-no-float  class="md-block" >
+                            <label>Library Short Name </label>
+                            <input minlength="5" md-maxlength="5" name="shortname" required ng-model="library.shortname" >
+                            <div ng-messages="libraryForm.shortname.$error">
+                                <div ng-message="required">This is required.</div>
+                                <div ng-message="md-maxlength">The short name must be 5 characters long.</div>
+                                <div ng-message="minlength">The short name must be 5 characters long.</div>
+                            </div>                               
+                        </md-input-container>
+                        <md-input-container md-no-float class="md-block" >
+                            <label>Library Long Name </label>
+                            <input  md-maxlength="50" name="longname" required  ng-model="library.longname" >
+                            <div ng-messages="libraryForm.longname.$error">
+                                <div ng-message="required">This is required.</div>
+                                <div ng-message="md-maxlength">The description must be less than 50 characters long.</div>
+                            </div>                               
+                        </md-input-container>
+                        <md-input-container md-no-float class="md-block" >
+                            <label>Campus</label>
+                            <md-select required name="campus" ng-model="library.campus">
+                                <md-option ng-repeat="campus in ctrl.campuses" value="{{campus.name}}">
+                                {{campus.name}}
+                                </md-option>
+                            </md-select>
+                            <div ng-messages="libraryForm.campus.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>                               
+                        </md-input-container>    
+                        <div  ng-show='ctrl.saveSuccess' class='success-msg'>
+                            SUCCESS
+                        </div>                        
+                        <md-input-container md-no-float class="md-block" >
+                            <md-button type='submit' flex class="md-raised md-primary md-button md-ink-ripple">
+                            Save
+                            </md-button>
+                            <md-button md-autofocus flex class="md-primary" ng-click="ctrl.closeDialog()">
+                            Cancel
+                            </md-button>                            
+                        </md-input-container>
+                    </div>
+                </form>
+            </div>
+        </md-content>
+    </div>
+
+</div>
