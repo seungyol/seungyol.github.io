@@ -19,7 +19,7 @@ This system contains the applcation for UQ Front end developer test.
 #### Comments
 
 1. on WCAG 2.0 AA compliance considerations
-
+  Checked with WAVE plugin
 on SEO considerations
 on estimation of how long would it take you to implement each mini-app, comment on how long it took you to implement it
 application deployment (provide URL to your deployed application, eg heroku, github io, or provide steps how to run it locally)

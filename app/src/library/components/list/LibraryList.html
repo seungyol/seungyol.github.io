@@ -1,5 +1,6 @@
 <!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
-<input type='text' name='search' ng-model='$ctrl.search' placeholder='Enter library name to filter'/>
+<label for="search" id="lblSearch">Search</label>
+<input type='text' id="search" name='search' ng-model='$ctrl.search' placeholder='Enter library name to filter' aria-label='Input for searching Library'/>
 <md-list>
   <md-list-item ng-repeat="library in $ctrl.libraries | filter:$ctrl.search">
     <md-button ng-click="$ctrl.showDetails({library:library})">

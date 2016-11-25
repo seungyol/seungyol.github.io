@@ -168,3 +168,8 @@ library-details div {
     bottom : 20px;
     right: 20px;
 }
+
+#lblSearch {
+    position: absolute;
+    left: -100px;
+}
