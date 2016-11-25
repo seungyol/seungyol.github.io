@@ -16,7 +16,7 @@ var initInjector = angular.injector(["ng"]);
 var $http = initInjector.get("$http");
 
 function fetchData() {
-    return $http.jsonp('https://app.library.uq.edu.au/api/v2/library_hours?callback=JSON_CALLBACK')
+    return $http.jsonp('//app.library.uq.edu.au/api/v2/library_hours?callback=JSON_CALLBACK')
         .success(function(data) {
             sessionStorage.setItem('libraryData', JSON.stringify(data.locations));
         }).error(function(data) {
@@ -28,7 +28,7 @@ function fetchData() {
 
 function fetchAvailability() {
     return $.ajax({
-          url: "https://app.library.uq.edu.au/api/computer_availability",
+          url: "//app.library.uq.edu.au/api/computer_availability",
           dataType: "jsonp",
           jsonpCallback: "jsonpCallback"
     }).done((result) => {
